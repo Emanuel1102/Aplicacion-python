@@ -1,0 +1,13 @@
+td, th{
+    text-align: center;
+    border: 1px solid black;
+    display: inline-block;
+    height: 50px;
+    width:  80px;
+    word-wrap: break-word;
+
+}
+
+td:empty{
+    all: unset;
+}

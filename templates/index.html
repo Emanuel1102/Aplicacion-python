@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/index.css">
+    <title>Aplicacion</title>
+</head>
+<body>
+
+
+
+    <form action="/registro" method="post">
+        <h4>Registro de usuarios</h4>
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="email" name="correo" placeholder="Correo">
+        <input type="password" name="contraseña" placeholder="Contraseña">
+        <input type="submit">
+    </form>
+
+    <table>
+        <caption>Usuarios registrados</caption>
+        <thead>
+            <tr>
+                {% for celda in encabezado_tabla %}
+                <th>{{celda}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.correo}}</td>
+                <td>{{usuario.contraseña}}</td>
+                <td> 
+                    <a href="{{url_for('eliminar', nombre_usuario=usuario.nombre)}}">Eliminar</a> 
+                </td>      
+                <td> 
+                    <a href="{{url_for('editar',nombre_usuario=usuario.nombre)}}">Editar</a> 
+                </td>                
+          
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
