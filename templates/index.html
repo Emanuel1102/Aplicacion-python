@@ -37,14 +37,28 @@
                     <a href="{{url_for('eliminar', nombre_usuario=usuario.nombre)}}">Eliminar</a> 
                 </td>      
                 <td> 
-                    <a href="{{url_for('editar',nombre_usuario=usuario.nombre)}}">Editar</a> 
-                </td>                
-          
+                    <button onclick="window.ventana.showModal()">Editar</button>
+                    <dialog id="ventana">
+                        <form action="/editar/{{usuario.nombre}}" method="post">
+                            <label for="nombre">nombre</label>
+                            <input type="text" name="nombre" id="nombre" value="{{usuario.nombre}}">
+                            <br>
+                            <label for="correo">correo</label>
+                            <input type="email" name="correo" id="correo" value="{{usuario.correo}}">
+                            <br>
+                            <label for="contraseña">contraseña</label>
+                            <input type="text" name="contraseña" id="contraseña" value="{{usuario.contraseña}}">
+                            <input type="submit" >
+                        </form>
+                        <button onclick="window.ventana.close()">cerrar</button>
+                    </dialog>
                 
+                </td>                                
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    
 
     
 </body>

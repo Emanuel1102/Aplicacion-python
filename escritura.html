@@ -8,28 +8,24 @@
 </head>
 <body>
 
-    <form action="">
-        <h4></h4>
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="email" name="correo" placeholder="Correo">
-        <input type="password" name="contraseña" placeholder="Contraseña">
-        <input type="submit" >
-        <a href="{{}}"></a>
-    </form>
+    <button onclick="window.ventana.showModal()">Editar</button>
 
-    <table>
-        <caption></caption>
-        <thead>
-            <tr>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="{{}}"></a></td>
-            </tr>
-        </tbody>
-    </table>
+    <dialog id="ventana">
+        <form action="">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="correo">correo</label>
+            <input type="email" name="correo" id="correo">
+            <br>
+            <label for="contraseña">contraseña</label>
+            <input type="password" name="contraseña" name="contraseña" id="contraseña">
+            <input type="submit" >
+        </form>
+        <button onclick="window.ventana.close()">cerrar</button>
+    </dialog>
+    
+
     
 </body>
 </html>
