@@ -34,9 +34,15 @@
                 <td>{{usuario.correo}}</td>
                 <td>{{usuario.contraseña}}</td>
                 <td> 
-                    <a href="{{url_for('eliminar', nombre_usuario=usuario.nombre)}}">Eliminar</a> 
+                    <button class="eliminar">Eliminar</button>
+                    <dialog class="ventana">
+                        <p>Eliminar</p>
+                        <a href="{{url_for('eliminar', nombre_usuario=usuario.nombre)}}">si</a> 
+                        <button type="button">no</button>
+                    </dialog>
+
                 </td>      
-                <td> 
+                <td>   
                     <button class="editar">Editar</button>
                     <dialog class="ventana">
                         <form action="/editar/{{usuario.nombre}}" method="post">
